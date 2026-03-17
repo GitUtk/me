@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utkarsh | Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Gochi+Hand&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #121212;
+            --pen: #e0e0e0;
+            --accent: #4a9eff;
+            --paper-texture: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            background-image: var(--paper-texture);
+            color: var(--pen);
+            font-family: 'Architects Daughter', cursive;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* The SVG Filter that makes lines look hand-drawn */
+        .rough-filter {
+            filter: url(#rough-paper);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 3px solid var(--pen);
+            border-radius: 50% 45% 52% 48% / 48% 52% 45% 50%; /* Rough circle */
+            filter: grayscale(100%);
+        }
+
+        .name-tag {
+            border: 2px solid var(--pen);
+            padding: 10px 20px;
+            transform: rotate(-2deg);
+            display: inline-block;
+            margin-bottom: 10px;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+
+        h1 {
+            font-family: 'Gochi Hand', cursive;
+            font-size: 3rem;
+            margin-bottom: 5px;
+        }
+
+        .bio {
+            font-size: 1.2rem;
+            max-width: 500px;
+            margin: 10px auto;
+        }
+
+        /* Sections Styling */
+        section {
+            margin: 60px 0;
+            position: relative;
+        }
+
+        .sketch-box {
+            border: 2px solid var(--pen);
+            padding: 25px;
+            border-radius: 15px 255px 15px 255px/255px 15px 255px 15px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2 {
+            font-family: 'Gochi Hand', cursive;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-decoration: underline;
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-group {
+            border: 1px dashed var(--pen);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .skill-item {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 8px;
+            margin: 3px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.1) rotate(2deg);
+            background: var(--accent);
+            color: #000;
+        }
+
+        /* Socials */
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            color: var(--pen);
+            text-decoration: none;
+            border: 2px solid var(--pen);
+            padding: 10px 15px;
+            border-radius: 50% 50% 50% 50% / 12% 15% 85% 88%;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: var(--pen);
+            color: var(--bg);
+            transform: translateY(-5px);
+        }
+
+        /* Arrows and Doodles */
+        .arrow-svg {
+            position: absolute;
+            width: 60px;
+            fill: none;
+            stroke: var(--pen);
+            stroke-width: 2;
+        }
+
+        #arrow1 { top: -40px; left: -50px; transform: rotate(-20deg); }
+        #arrow2 { bottom: -30px; right: -20px; transform: rotate(140deg); }
+
+        .flag {
+            font-style: normal;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            #arrow1, #arrow2 { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <svg style="display: none;">
+        <filter id="rough-paper">
+            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+        </filter>
+    </svg>
+
+    <div class="container">
+        
+        <header class="rough-filter">
+            <div class="avatar-container">
+                <img src="https://pbs.twimg.com/profile_images/2029916172309979136/laAL53Q5_400x400.jpg" alt="Utkarsh" class="avatar">
+            </div>
+            <div class="name-tag">
+                <h1>Utkarsh</h1>
+            </div>
+            <p class="bio">
+                20-year-old web developer from India <span class="flag">🇮🇳</span>. 
+                Building things with code and caffeine.
+            </p>
+        </header>
+
+        <section class="rough-filter">
+            <!-- Hand drawn arrow -->
+            <svg class="arrow-svg" id="arrow1" viewBox="0 0 50 50">
+                <path d="M10,10 Q25,0 40,10 T45,40" />
+                <path d="M35,35 L45,40 L40,30" />
+            </svg>
+
+            <div class="sketch-box">
+                <h2>Technical Toolkit</h2>
+                <div class="skills-container">
+                    <div class="skill-group">
+                        <p><strong>Fundamentals:</strong></p>
+                        <span class="skill-item">DSA</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">C/C++</span>
+                        <span class="skill-item">SQL</span>
+                    </div>
+                    <div class="skill-group">
+                        <p><strong>Web & Tools:</strong></p>
+                        <span class="skill-item">HTML/CSS</span>
+                        <span class="skill-item">Javascript</span>
+                        <span class="skill-item">FastAPI</span>
+                        <span class="skill-item">REST API</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Git</span>
+                    </div>
+                    <div class="skill-group">
+                        <p><strong>Data & ML:</strong></p>
+                        <span class="skill-item">TensorFlow</span>
+                        <span class="skill-item">Scikit Learn</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">Numpy</span>
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">Matplotlib</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="rough-filter">
+            <div class="sketch-box">
+                <h2>GitHub Activity</h2>
+                <div style="overflow-x: auto; padding: 10px 0;">
+                    <img src="https://ghchart.rshah.org/A9A9A9/GitUtk" alt="GitHub Contribution Graph" style="width: 100%; min-width: 700px; display: block; filter: saturate(1.5);">
+                </div>
+                <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8; font-style: italic;">
+                    * My daily scribbles in the digital world.
+                </p>
+            </div>
+        </section>
+
+        <section class="rough-filter">
+            <div class="sketch-box" style="text-align: center;">
+                <h2>Connect with me</h2>
+                <div class="social-links">
+                    <a href="https://x.com/UtkDev" class="social-btn" target="_blank">X.com</a>
+                    <a href="https://github.com/GitUtk" class="social-btn" target="_blank">GitHub</a>
+                    <a href="mailto:utkarshyadavun@gmail.com" class="social-btn">Email</a>
+                </div>
+            </div>
+
+            <!-- Hand drawn arrow 2 -->
+            <svg class="arrow-svg" id="arrow2" viewBox="0 0 50 50">
+                <path d="M5,5 C20,10 30,30 45,45" />
+                <path d="M35,45 L45,45 L45,35" />
+            </svg>
+        </section>
+
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const boxes = document.querySelectorAll('.sketch-box');
+            const x = (window.innerWidth / 2 - e.pageX) / 50;
+            const y = (window.innerHeight / 2 - e.pageY) / 50;
+            
+            boxes.forEach(box => {
+                box.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
