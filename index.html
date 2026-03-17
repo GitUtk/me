@@ -14,7 +14,11 @@
             --accent: #4a9eff;
             --paper-texture: url('https://www.transparenttextures.com/patterns/dark-matter.png');
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             background-color: var(--bg);
             background-image: var(--paper-texture);
@@ -106,6 +110,25 @@
             background: var(--accent);
             color: #000;
         }
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .social-btn {
+            color: var(--pen);
+            text-decoration: none;
+            border: 2px solid var(--pen);
+            padding: 10px 15px;
+            border-radius: 50% 50% 50% 50% / 12% 15% 85% 88%;
+            transition: all 0.3s;
+        }
+        .social-btn:hover {
+            background: var(--pen);
+            color: var(--bg);
+            transform: translateY(-5px);
+        }
         .project-card {
             display: flex;
             gap: 25px;
@@ -114,13 +137,18 @@
             border: 1px dashed var(--pen);
             padding: 15px;
             border-radius: 15px;
+            overflow: hidden;           /* Prevents image overflow */
         }
         .project-image {
             flex: 1;
             min-width: 280px;
+            overflow: hidden;           /* Clips anything that spills out */
+            border-radius: 12px;
         }
         .project-image img {
             width: 100%;
+            height: auto;
+            display: block;
             border-radius: 10px;
             transition: transform 0.3s;
         }
@@ -148,25 +176,6 @@
             color: var(--bg);
             transform: translateY(-3px);
         }
-        .social-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .social-btn {
-            color: var(--pen);
-            text-decoration: none;
-            border: 2px solid var(--pen);
-            padding: 10px 15px;
-            border-radius: 50% 50% 50% 50% / 12% 15% 85% 88%;
-            transition: all 0.3s;
-        }
-        .social-btn:hover {
-            background: var(--pen);
-            color: var(--bg);
-            transform: translateY(-5px);
-        }
         .arrow-svg {
             position: absolute;
             width: 60px;
@@ -177,20 +186,20 @@
         #arrow1 { top: -40px; left: -50px; transform: rotate(-20deg); }
         #arrow2 { bottom: -30px; right: -20px; transform: rotate(140deg); }
 
-        /* Mobile - IMAGES NOW 15% SMALLER */
+        /* Mobile adjustments */
         @media (max-width: 700px) {
-            .project-card { 
-                flex-direction: column; 
+            .project-card {
+                flex-direction: column;
+                overflow: hidden;
             }
-            
-            /* ↓↓↓ THIS IS THE ONLY CHANGE ↓↓↓ */
             .project-image {
-                max-width: 85%;          /* 15% smaller than full width */
-                margin: 0 auto 20px auto; /* centered + breathing room */
+                max-width: 85%;
+                margin: 0 auto 20px auto;
+                overflow: hidden;
             }
-            
             .project-image img {
                 width: 100%;
+                height: auto;
             }
         }
 
@@ -207,6 +216,7 @@
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
         </filter>
     </svg>
+
     <div class="container">
         <header class="rough-filter">
             <div class="avatar-container">
@@ -268,6 +278,7 @@
         <section class="rough-filter">
             <div class="sketch-box">
                 <h2>Featured Projects</h2>
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="images/clipzify.png" alt="Clipzify Preview">
@@ -285,7 +296,7 @@
                     </div>
                 </div>
 
-                <div class="project-card reverse">
+                <div class="project-card">
                     <div class="project-content">
                         <p class="project-tag">AI Learning SaaS</p>
                         <h3>ThinkTube</h3>
