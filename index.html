@@ -154,6 +154,10 @@
             border-radius: 50% 50% 50% 50% / 12% 15% 85% 88%;
             transition: all 0.3s;
         }
+        .project-image {
+    flex: 1;
+    min-width: 0; 
+}
 
         .social-btn:hover {
             background: var(--pen);
@@ -176,10 +180,10 @@
 }
 
 .project-image img {
-    width: 100%;              
+    width: 100%;
     max-width: 100%;
+    height: auto;
     display: block;
-    margin: 0 auto;          
     border-radius: 10px;
     transition: transform 0.3s;
 }
