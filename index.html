@@ -160,6 +160,76 @@
             color: var(--bg);
             transform: translateY(-5px);
         }
+        .project-card {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px dashed var(--pen);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.project-image {
+    flex: 1;
+    min-width: 280px;
+}
+
+.project-image img {
+    width: 100%;
+    border-radius: 10px;
+    /* NO grayscale here */
+    transition: transform 0.3s;
+}
+
+.project-image img:hover {
+    transform: scale(1.03) rotate(-1deg);
+}
+
+.project-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.project-tag {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+
+.project-desc {
+    margin: 10px 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.project-tech {
+    margin-bottom: 15px;
+}
+
+.project-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 2px solid var(--pen);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--pen);
+    transition: 0.3s;
+}
+
+.project-btn:hover {
+    background: var(--pen);
+    color: var(--bg);
+    transform: translateY(-3px);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .project-card {
+        flex-direction: column;
+    }
+}
+        
 
         /* Arrows and Doodles */
         .arrow-svg {
@@ -256,38 +326,42 @@
                 </div>
             </div>
         </section>
-<section class="rough-filter">
-    <div class="sketch-box">
-        <h2>Featured Projects</h2>
-
-        <div style="display: flex; flex-direction: column; gap: 30px;">
-
-            <div style="border: 1px dashed var(--pen); padding: 15px; border-radius: 12px;">
+        
                 
-                <img src="images/clipzify.png" 
-                     alt="Clipzify Preview" 
-                     style="width: 100%; border-radius: 10px; margin-bottom: 10px; filter: grayscale(100%);">
-
-                <h3 style="margin-bottom: 5px;">Clipzify</h3>
-
-                <p style="font-size: 0.95rem; opacity: 0.9;">
-                    A fully browser-based screen recorder that automatically enhances recordings 
-                    with smart editing features like auto zoom, smooth cursor tracking, and 
-                    cinematic effects — no installs required.
-                </p>
-
-                <div style="margin-top: 10px;">
-                    <span class="skill-item">Reactjs</span>
-                    <span class="skill-item">FFmpeg</span>
-                    <span class="skill-item">WASM</span>
-                    <span class="skill-item">JavaScript</span>
+        <section class="rough-filter">
+            <div class="sketch-box">
+                <h2>Featured Projects</h2>
+        
+                <div class="project-card">
+        
+                    <div class="project-image">
+                        <img src="images/clipzify.png" alt="Clipzify Preview">
+                    </div>
+                    <div class="project-content">
+                        <p class="project-tag">Browser-based SaaS</p>
+        
+                        <h3>Clipzify</h3>
+        
+                        <p class="project-desc">
+                            A fully browser-based screen recorder that transforms raw recordings 
+                            into polished videos automatically — featuring smart auto zoom, 
+                            smooth cursor tracking, and cinematic effects. No installation needed.
+                        </p>
+        
+                        <div class="project-tech">
+                            <span class="skill-item">ReactJS</span>
+                            <span class="skill-item">FFmpeg</span>
+                            <span class="skill-item">WASM</span>
+                            <span class="skill-item">JavaScript</span>
+                        </div>
+        
+                        <a href="#" class="project-btn">Live Demo</a>
+                    </div>
+        
                 </div>
-
+        
             </div>
-
-        </div>
-    </div>
-</section>
+        </section>
 
 
         <section class="rough-filter">
